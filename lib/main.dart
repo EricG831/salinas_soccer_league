@@ -1,8 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:salinas_soccer_league/homePage.dart';
+import 'package:salinas_soccer_league/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+Map<int, Color> color = {
+  50: Color.fromRGBO(14, 159, 77, .1),
+  100: Color.fromRGBO(14, 159, 77, .2),
+  200: Color.fromRGBO(14, 159, 77, .3),
+  300: Color.fromRGBO(14, 159, 77, .4),
+  400: Color.fromRGBO(14, 159, 77, .5),
+  500: Color.fromRGBO(14, 159, 77, .6),
+  600: Color.fromRGBO(14, 159, 77, .7),
+  700: Color.fromRGBO(14, 159, 77, .8),
+  800: Color.fromRGBO(14, 159, 77, .9),
+  900: Color.fromRGBO(14, 159, 77, 1),
+};
+
+MaterialColor colorCustom = MaterialColor(0xFF0e9f4d, color);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -12,57 +29,42 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Salinas Soccer League',
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Salinas Soccer League'),
+          primarySwatch: colorCustom,
+          inputDecorationTheme: InputDecorationTheme(
+            focusedBorder:
+                UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+          )),
+      home: const HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({Key? key, required this.title}) : super(key: key);
+//   final String title;
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+// }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
+// class _MyHomePageState extends State<MyHomePage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(widget.title),
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             // Image.asset('lib/assets/images/ssl_logo.png')
+//           ],
+//         ),
+//       ),
+//       // This trailing comma makes auto-formatting nicer for build methods.
+//     );
+//   }
+// }
