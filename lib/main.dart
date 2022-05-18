@@ -22,7 +22,7 @@ Map<int, Color> color = {
 MaterialColor colorCustom = MaterialColor(0xFF0e9f4d, color);
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   // This widget is the root of your application.
   @override

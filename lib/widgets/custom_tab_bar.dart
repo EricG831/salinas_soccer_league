@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTabBar extends StatelessWidget {
-  CustomTabBar({required this.controller, required this.tabs});
+  CustomTabBar({this.controller, this.tabs});
   final TabController controller;
   final List<Widget> tabs;
 

@@ -23,7 +23,7 @@ class SSL {
   SSL._();
 
   static const _kFontFam = 'SSL';
-  static const String? _kFontPkg = null;
+  static const String _kFontPkg = null;
 
   static const IconData home =
       IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);

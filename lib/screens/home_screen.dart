@@ -10,15 +10,15 @@ import 'dart:math' as math show pi;
 import 'package:salinas_soccer_league/assets/fonts/ssl_icons.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late List<CollapsibleItem> _items;
-  late String _headline;
+  List<CollapsibleItem> _items;
+  String _headline;
   AssetImage _avatarImg = AssetImage('lib/assets/images/ssl_logo.png');
 
   @override
