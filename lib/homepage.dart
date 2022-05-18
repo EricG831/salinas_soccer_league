@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage>
         )),
     ContentView(
         tab: CustomTab(
-          title: 'Contact',
+          title: 'Contact Us',
         ),
         content: Center(
           child: Container(
