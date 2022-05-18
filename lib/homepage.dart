@@ -4,12 +4,15 @@
 // import 'dart:js';
 
 import 'package:flutter/material.dart';
+import 'package:salinas_soccer_league/screens/adulto_tab.dart';
+import 'package:salinas_soccer_league/screens/home_tab.dart';
+import 'package:salinas_soccer_league/screens/juvenil_tab.dart';
 import 'package:salinas_soccer_league/widgets/content_view.dart';
 import 'package:salinas_soccer_league/widgets/custom_tab.dart';
 import 'package:salinas_soccer_league/widgets/custom_tab_bar.dart';
 
 class HomePage extends StatefulWidget {
-  //const HomePage({Key key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -26,34 +29,17 @@ class _HomePageState extends State<HomePage>
         tab: CustomTab(
           title: 'Home',
         ),
-        content: SizedBox.expand(
-          child: Container(
-            color: Colors.white,
-            child: Center(child: Text('Home Page')),
-          ),
-        )),
+        content: HomeTab()),
     ContentView(
         tab: CustomTab(
-          title: 'About',
+          title: 'Juvenil',
         ),
-        content: Center(
-          child: Container(
-            color: Colors.green,
-            width: 100,
-            height: 100,
-          ),
-        )),
+        content: JuvenilTab()),
     ContentView(
         tab: CustomTab(
-          title: 'Contact Us',
+          title: 'Adulto',
         ),
-        content: Center(
-          child: Container(
-            color: Colors.blue,
-            width: 100,
-            height: 100,
-          ),
-        ))
+        content: AdultoTab()),
   ];
 
   @override
@@ -76,7 +62,7 @@ class _HomePageState extends State<HomePage>
           padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
           child: LayoutBuilder(builder: (context, constraints) {
             if (constraints.maxWidth > 715) {
-              return desktopView();
+              return SingleChildScrollView(child: desktopView());
             } else {
               return mobileView();
             }
@@ -85,23 +71,25 @@ class _HomePageState extends State<HomePage>
   }
 
   Widget desktopView() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        CustomTabBar(
-          controller: tabController,
-          tabs: contentViews.map((e) => e.tab).toList(),
-        ),
-        Container(
-          height: screenHeight * .85,
-          child: TabBarView(
+    return Stack(children: [
+      Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          CustomTabBar(
             controller: tabController,
-            children: contentViews.map((e) => e.content).toList(),
+            tabs: contentViews.map((e) => e.tab).toList(),
           ),
-        )
-      ],
-    );
+          Container(
+            height: screenHeight * .85,
+            child: TabBarView(
+              controller: tabController,
+              children: contentViews.map((e) => e.content).toList(),
+            ),
+          )
+        ],
+      ),
+    ]);
   }
 
   Widget mobileView() {
