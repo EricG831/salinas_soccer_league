@@ -1,7 +1,7 @@
 // ignore: file_names
 // ignore_for_file: file_names
 // @dart=2.9
-import 'dart:js';
+// import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:salinas_soccer_league/widgets/content_view.dart';
