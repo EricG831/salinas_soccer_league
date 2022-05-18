@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTab extends StatelessWidget {
-  CustomTab({this.title});
+  CustomTab({required this.title});
 
   final String title;
 
