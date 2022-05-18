@@ -1,6 +1,6 @@
 // ignore: file_names
 // ignore_for_file: file_names
-// @dart=2.9
+
 // import 'dart:js';
 
 import 'package:flutter/material.dart';
@@ -9,7 +9,7 @@ import 'package:salinas_soccer_league/widgets/custom_tab.dart';
 import 'package:salinas_soccer_league/widgets/custom_tab_bar.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key key}) : super(key: key);
+  //const HomePage({Key key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -17,10 +17,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
-  double screenHeight;
-  double topPadding;
-  double bottomPadding;
-  TabController tabController;
+  late double screenHeight;
+  late double topPadding;
+  late double bottomPadding;
+  late TabController tabController;
   List<ContentView> contentViews = [
     ContentView(
         tab: CustomTab(

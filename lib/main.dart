@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:salinas_soccer_league/homepage.dart';
 import 'package:salinas_soccer_league/screens/home_screen.dart';
