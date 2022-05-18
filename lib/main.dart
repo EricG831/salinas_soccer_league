@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             focusedBorder:
                 UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
           )),
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }
