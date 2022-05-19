@@ -31,7 +31,7 @@ class _JuvenilTabState extends State<JuvenilTab> {
           ),
         ),
       ),
-      const JuvenilMenu(),
+      JuvenilMenu(),
     ]);
   }
 }

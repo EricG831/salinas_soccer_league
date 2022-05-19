@@ -29,7 +29,9 @@ class _HomePageState extends State<HomePage>
         tab: CustomTab(
           title: 'Home',
         ),
-        content: HomeTab()),
+        content: Stack(children: [
+          HomeTab(),
+        ])),
     ContentView(
         tab: CustomTab(
           title: 'Juvenil',
@@ -58,23 +60,39 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
         // backgroundColor: Color(0xff1e1e24),
         backgroundColor: Theme.of(context).primaryColor,
-        body: Padding(
-          padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
-          child: LayoutBuilder(builder: (context, constraints) {
-            if (constraints.maxWidth > 715) {
-              return SingleChildScrollView(child: desktopView());
-            } else {
-              return mobileView();
-            }
-          }),
-        ));
+        body: Stack(children: [
+          Row(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 20.0),
+                child: Container(
+                  child: Image.asset(
+                    'lib/assets/images/ssl_logo.png',
+                    height: 90,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
+            child: LayoutBuilder(builder: (context, constraints) {
+              if (constraints.maxWidth > 715) {
+                return Stack(
+                    children: [SingleChildScrollView(child: desktopView())]);
+              } else {
+                return mobileView();
+              }
+            }),
+          ),
+        ]));
   }
 
   Widget desktopView() {
     return Stack(children: [
       Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CustomTabBar(
             controller: tabController,

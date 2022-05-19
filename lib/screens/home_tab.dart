@@ -12,7 +12,7 @@ class _HomeTabState extends State<HomeTab> {
   Widget build(BuildContext context) {
     return SizedBox.expand(
       child: Container(
-        color: Colors.white,
+        color: Colors.blue,
         child: SingleChildScrollView(
           child: Column(children: [
             Container(
@@ -23,6 +23,16 @@ class _HomeTabState extends State<HomeTab> {
             Container(
               color: Colors.yellow,
               height: 500,
+              width: MediaQuery.of(context).size.width,
+            ),
+            Container(
+              color: Colors.black,
+              height: 1000,
+              width: MediaQuery.of(context).size.width,
+            ),
+            Container(
+              color: Colors.lightBlue,
+              height: 1000,
               width: MediaQuery.of(context).size.width,
             )
           ]),

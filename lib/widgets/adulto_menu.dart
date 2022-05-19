@@ -9,14 +9,14 @@ import 'dart:math' as math show pi;
 
 import 'package:salinas_soccer_league/assets/fonts/ssl_icons.dart';
 
-class JuvenilMenu extends StatefulWidget {
-  const JuvenilMenu({Key? key}) : super(key: key);
+class AdultoMenu extends StatefulWidget {
+  const AdultoMenu({Key? key}) : super(key: key);
 
   @override
-  State<JuvenilMenu> createState() => _JuvenilMenuState();
+  State<AdultoMenu> createState() => _AdultoMenuState();
 }
 
-class _JuvenilMenuState extends State<JuvenilMenu> {
+class _AdultoMenuState extends State<AdultoMenu> {
   late List<CollapsibleItem> _items;
   late String _headline;
   AssetImage _avatarImg = AssetImage('lib/assets/images/ssl_logo.png');
@@ -228,7 +228,7 @@ class _JuvenilMenuState extends State<JuvenilMenu> {
             items: [
               SideMenuItem(
                 priority: 0,
-                title: 'Rol Juvenil',
+                title: 'Rol Adulto',
                 onTap: () {
                   page.jumpToPage(0);
                 },
@@ -236,7 +236,7 @@ class _JuvenilMenuState extends State<JuvenilMenu> {
               ),
               SideMenuItem(
                 priority: 1,
-                title: 'Tabla Juvenil',
+                title: 'Tabla Adulto',
                 onTap: () {
                   page.jumpToPage(1);
                 },
@@ -251,12 +251,23 @@ class _JuvenilMenuState extends State<JuvenilMenu> {
                 icon: Icon(Icons.file_copy_rounded),
               ),
               SideMenuItem(
-                  priority: 3,
-                  title: 'News',
-                  onTap: () {
-                    page.jumpToPage(3);
-                  },
-                  icon: Icon(Icons.list)),
+                priority: 3,
+                title: 'News',
+                onTap: () {
+                  page.jumpToPage(3);
+                },
+                icon: Icon(Icons.list),
+              ),
+              SideMenuItem(
+                priority: 4,
+                title: 'Teams',
+                onTap: () {
+                  page.jumpToPage(4);
+                },
+                icon: Icon(
+                  Icons.group,
+                ),
+              )
             ],
           ),
           Expanded(
@@ -267,7 +278,7 @@ class _JuvenilMenuState extends State<JuvenilMenu> {
                   color: Colors.white,
                   child: Center(
                     child: Text(
-                      'Rol Juvenil',
+                      'Rol Adulto',
                       style: TextStyle(fontSize: 35),
                     ),
                   ),
@@ -276,7 +287,7 @@ class _JuvenilMenuState extends State<JuvenilMenu> {
                   color: Colors.white,
                   child: Center(
                     child: Text(
-                      'Tabla Juvenil',
+                      'Tabla Adulto',
                       style: TextStyle(fontSize: 35),
                     ),
                   ),
@@ -295,6 +306,15 @@ class _JuvenilMenuState extends State<JuvenilMenu> {
                   child: Center(
                     child: Text(
                       'News',
+                      style: TextStyle(fontSize: 35),
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.white,
+                  child: Center(
+                    child: Text(
+                      'Teams',
                       style: TextStyle(fontSize: 35),
                     ),
                   ),
